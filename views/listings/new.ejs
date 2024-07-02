@@ -1,0 +1,73 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <div class="row">
+        <div class="col-8 offset-2">
+    <h2>Create a new Listing now </h2>
+    <br>
+    <form method="POST" action="/listings/new/list" class="needs-validation" novalidate enctype="multipart/form-data">
+        <!-- here we are going to add one more learning intead os accesing in action route all variable we will only access through by making one object this ca
+        can be done by adding listing[title] in name like that here listing ek object bnega and title uski key -->
+        <div>
+            <label for="title" clas="form-label">Title</label>
+            <input type="text" name="listing[title]"class="form-control" placeholder="enter a catchy title " required>
+            <div class="invalid-feedback">enter correct title</div>
+        </div>
+        
+        
+        <div>
+            <label for="description" class="form-label">description</label>
+            <textarea name="listing[description]"  placeholder="enter description" class="form-control" required></textarea>
+            <div class="invalid-feedback">enter correct title</div>
+        </div>
+        
+        <!-- <div>
+            <label for="image" class="form-label">Image</label>
+            <input type="text" name="listing[image]" placeholder="provide image url" class="form-control" required>
+            <div class="invalid-feedback">enter correct image url</div>
+        </div> -->
+
+        <div>
+            <label for="image" class="form-label">Image</label>
+            <input type="file" name="listing[image]" placeholder="provide image url" class="form-control" required>
+            <div class="invalid-feedback">enter correct image url</div>
+        </div>
+        
+        
+
+        <div class="row">
+            <div class="col-4">
+                <label for="price" class="form-label">Price</label>
+                <input type="text" name="listing[price]" placeholder="enter price  " class="form-control" required>
+                <div class="invalid-feedback">enter correct price</div>
+            </div>
+
+            <div class="col-8">
+                <label for="country" class="form-label">Country</label>
+                <input type="text" name="listing[country]" placeholder="enter country " class="form-control" required>
+                <div class="invalid-feedback">enter correct country</div>
+            </div>
+
+        </div>
+        <div>
+            <label for="location" class="form-label">Location</label>
+            <input type="text" name="listing[location]" placeholder="enter location " class="form-control" required>
+            <div class="invalid-feedback">enter correct location</div>
+        </div>
+        
+        
+        
+        
+        <br>
+        <button class="btn btn-dark add-btn">Add new</button>
+        <br>
+        <br>
+    
+
+
+    </form>
+    </div>
+</div>
+    
+</body>
+
+

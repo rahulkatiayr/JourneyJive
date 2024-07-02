@@ -1,0 +1,74 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <div class="row">
+        <div class="col-8 offset-2">
+    <h2>edit your listing</h2>
+    
+    <form method="POST" action="/listings/<%= listing._id %>/update?_method=PUT"  class="needs-validation" novalidate enctype="multipart/form-data">
+        <!-- here we are going to add one more learning intead os accesing in action route all variable we will only access through by making one object this ca
+        can be done by adding listing[title] in name like that here listing ek object bnega and title uski key -->
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="listing[title]" value="<%= listing.title %>" class="form-control" required>
+            <div class="valid-feedback"> valid title></div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="listing[description]" class="form-control" required ><%= listing.description %>"</textarea>
+            <div class="invalid-feedback"> enter new description</div>
+        </div>
+
+        <div class="mb-3">
+            <h3>PREVIOUS IMAGE </h3>
+           <img class="show-img-blur" src="<%= blur_image %>">
+        </div>
+        
+        
+        <div class="mb-3">
+            <label for="image" class="form-label"> Upload your image  </label>
+            <input type="file" name="listing[image]" class="form-control" >
+            
+        </div>
+
+        <div class="row" >
+            <div class="mb-3 col-4">
+                <label for="price" class="form-label">Price</label>
+                <input type="text" name="listing[price]" class="form-control" value="<%= listing.price %>" required>
+                <div class="invalid-feedback"> enter new price</div>
+    
+            </div>
+
+            <div class="mb-3 col-8">
+                <label for="country" class="form-label">Country</label>
+                <input type="text" name="listing[country]"class="form-control" value="<%= listing.country %>" required>
+                <div class="invalid-feedback"> enter  new country</div>
+            </div>
+            
+
+        </div>
+        
+        
+        
+        
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" name="listing[location]" class="form-control" value="<%= listing.location %>" >
+            <div class="invalid-feedback"> enter new location</div>
+        </div>
+        
+        
+        
+        
+        
+        <br>
+        <button class="btn btn-dark add-btn">edit</button>
+        <br>
+        <br>
+
+
+    </form>
+        </div>
+</div>
+    
+</body>

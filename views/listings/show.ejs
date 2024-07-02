@@ -1,0 +1,101 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    
+    <div class="row mt-3">
+      <div class="col-8 offset-2">
+        <h3><%= listing.title %> </h3>
+      </div>
+
+      <div class="card col-5 offset-2 mycard">
+        <div class="card">
+          <img src="<%= listing.image.url %>" class="card-img-top show-img" alt="listing_image">
+          <div class="card-body">
+            <p class="card-text">
+              <b><%= listing.owner[0].username %></b><br>
+              <b><%= listing.title %></b><br>
+              <b><%= listing.description %></b><br>
+              <b><%= listing.country %></b><br>
+              <b><%= listing.location %></b><br>
+              <b> &#8377;<%= listing.price.toLocaleString("en-IN") %></b>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <% if(current_user && current_user._id.equals(listing.owner[0]._id)) {%>
+    <div class="row mt-3">
+      <div class="col-8 offset-2">
+        <div class="d-flex">
+          <a href="/listings/<%=listing._id%>/edit" class="me-2">
+            <button class="btn btn-danger">Edit Details</button>
+          </a>
+          <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE">
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <% } %>
+
+    <hr>
+
+    <div class="row mt-3 mb-3">
+      <div class="col-8 offset-2">
+        <h2>Leave a Review</h2>
+        <form method="POST" action="/listings/<%= listing._id %>/reviews" novalidate class="needs-validation">
+          <div class="mb-3 mt-3">
+            <label for="rating" class="form-label"></label>
+            <fieldset class="starability-slot">
+              <legend></legend>
+              <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked aria-label="No rating." />
+              <input type="radio" id="first-rate1" name="review[rating]" value="1" />
+              <label for="first-rate1" title="Terrible">1 star</label>
+              <input type="radio" id="first-rate2" name="review[rating]" value="2" />
+              <label for="first-rate2" title="Not good">2 stars</label>
+              <input type="radio" id="first-rate3" name="review[rating]" value="3" />
+              <label for="first-rate3" title="Average">3 stars</label>
+              <input type="radio" id="first-rate4" name="review[rating]" value="4" />
+              <label for="first-rate4" title="Very good">4 stars</label>
+              <input type="radio" id="first-rate5" name="review[rating]" value="5" />
+              <label for="first-rate5" title="Amazing">5 stars</label>
+            </fieldset>
+          </div>
+
+          <div class="mb-3">
+            <label for="comment" class="form-label"><h3>Comments</h3></label>
+            <textarea name="review[comment]" id="comment" cols="30" rows="5" class="form-control" required></textarea>
+            <div class="invalid-feedback">Please submit a comment.</div>
+          </div>
+
+          <button class="btn btn-danger">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row mt-3">
+      <div class="col-8 offset-2">
+        <h2>All Reviews</h2>
+        <div class="row ">
+          <% listing.reviews.forEach(function(review) { %>
+          <div class="card col-12 col-md-5 mb-3 me-md-3">
+            <div class="card-body ">
+              <h5 class="card-title"><%= listing.owner[0].username %></h5>
+              <p class="starability-result card-text" data-rating="<%=review.rating%>"></p>
+              <p class="card-text"><%= review.comment %></p>
+             
+              <form method="POST" action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE">
+                <button type="submit" class="btn btn-sm btn-dark mb-2 ">Delete</button>
+              </form>
+             
+            </div>
+          </div>
+          <% }); %>
+        </div>
+      </div>
+    </div>
+  
+</body>
+<script src="/js/script.js"></script>
