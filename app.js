@@ -21,14 +21,6 @@ const methodOverride=require("method-override");
 const ejsMate=require("ejs-mate");
 app.use(methodOverride("_method"));
 
-
-
-// app.get("/",(req,res)=>{
-//     res.send("started sir ")
-// });
-
-
-
 const flash=require("connect-flash");
 
 app.engine("ejs",ejsMate);
@@ -138,10 +130,16 @@ app.listen(8080,()=>{
 
 
 
+
+
 app.use("/listings",listingsRouter);
 app.use("/listings/:id/reviews",reviewsRouter);
 app.use("/",userRouter);
 
+
+app.get("/",(req,res)=>{
+    res.render("listings/Home.ejs");
+});
 
 app.get("*",(req,res,next)=>{
     next(new ExpressError(404,"page not found "))

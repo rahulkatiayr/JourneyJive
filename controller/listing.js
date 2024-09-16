@@ -11,13 +11,13 @@ module.exports.edit=async(req,res)=>{
     const listing=await Listing.findById(id);
     let originalurl=listing.image.url;
     let filename=listing.image.filename;
-    console.log("this is file name ");
-    console.log(filename);
-    console.log("previous url ");
-    console.log(originalurl);
+    // console.log("this is file name ");
+    // console.log(filename);
+    // console.log("previous url ");
+    // console.log(originalurl);
    let blur_image = originalurl.replace("/upload","/upload/h_300,w_250");
-   console.log("here is new url ");
-   console.log(blur_image);
+//    console.log("here is new url ");
+//    console.log(blur_image);
  
     res.render("listings/edit.ejs",{listing,blur_image,filename});
 };

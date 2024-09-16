@@ -2,10 +2,10 @@ const Listing=require("./models/listing.js");
 
 
 module.exports.isloggedin=(req,res,next)=>{
-    console.log(req.path,"....",req.originalUrl);
+    // console.log(req.path,"....",req.originalUrl);
     if(!req.isAuthenticated()){
         req.session.originalurl=req.originalUrl;
-        console.log("originalUrl is this ");
+        // console.log("originalUrl is this ");
         req.flash("error","you must be logged in first");
         return res.redirect("/login");
     

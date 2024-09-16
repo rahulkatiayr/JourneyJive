@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JourneyJive - Let's Travel Together</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- CSS Styling -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            /* background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%); */
+            background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+            color: #333;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* background: linear-gradient(135deg, #7b9cd3 0%, #4a77a9 100%);  */
+            background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            background-color: #ff6b6b;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.2rem;
+            color: white;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #ff3b3b;
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+        }
+
+        .section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .section p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        footer {
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Welcome to JourneyJive</h1>
+        <p>Embark on unforgettable journeys, discover hidden gems, and explore the world like never before.</p>
+        <a href="/listings" class="btn">Let's Travel</a>
+    </div>
+
+    <!-- About Us Section -->
+    <section class="section">
+        <h2>Why Choose JourneyJive?</h2>
+        <p>JourneyJive is your ultimate travel companion. Whether you're looking for adventure, relaxation, or cultural immersion, we've got the perfect destinations lined up for you. Start your journey with us today and make lasting memories.</p>
+    </section>
+
+    <!-- Featured Destinations -->
+    <section class="section">
+        <h2>Featured Destinations</h2>
+        <div class="cards">
+            <!-- Card 1 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" alt="Mountain View">
+                <h3>Mountain Adventures</h3>
+                <p>Climb the highest peaks, breathe the freshest air, and experience the tranquility of mountain life.</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Beach Paradise">
+                <h3>Beach Paradise</h3>
+                <p>Soak in the sun, feel the sand beneath your feet, and dive into crystal-clear waters.</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c" alt="City Life">
+                <h3>Urban Exploration</h3>
+                <p>Discover the hidden gems of the world's most iconic cities, from food to culture and everything in between.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 JourneyJive | Your Travel Companion
+    </footer>
+
+</body>
+
+</html>
