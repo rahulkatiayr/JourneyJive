@@ -17,8 +17,7 @@
   "scripts": {
   "start": "node index.js",  // Add this line
   "test": "echo \"Error: no test specified\" && exit 1"
-}
-,
+},
 
   "keywords": [],
 
