@@ -1,6 +1,7 @@
 {
   "functions": {
-    "api/**/*.js": { "runtime": "nodejs20" }
+    "api/**/*.js": { "runtime": "nodejs@20" }
   }
 }
+
 
