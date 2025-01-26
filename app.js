@@ -151,6 +151,7 @@ app.use((err,req,res,next)=>{
     res.status(status).render("error.ejs",{message,status})
 
 })
+module.exports = app;
 
 
 
